@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Form
+  ================================================== -->
+
+
+<div class="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="lead">
+            {% if original %}
+                {% if translated %}
+                    「{{ original }}」を　やさしい日本語に　します。</br>
+                    <div class=translated>
+                        <div class=translated-main>「{{ translated }}」</br></div>
+                        </br>
+                        <div class=audio>
+                            <audio controls src="templates/media/read.mp3">
+                            </audio>
+                        </div>
+                        <span class=moredetail>{{ detail }}</span>
+                    </div>
+                {% else %}
+                    もういちど　おしえてください。
+                {% endif %}
+            {% else %}
+                にほんごを　いれて　ください。
+            {% endif %}
+        </p>
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="inputs">にほんご：</label>
+                <input type="text" class="form-control" id="inputs" name="inputs" autocomplete="off">
+            </div>
+            <div class="col text-center">
+                <button type="submit" class="btn btn-outline-primary">やさしい日本語　に　する</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Form
+  ================================================== -->
+
+
+<div class="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="lead">
+            URLを　おしえて　ください。
+        </p>
+        <form action="/rubied" method="GET" >
+            <div class="form-group">
+                <label for="inputs">URL：</label>
+                <input type="text" class="form-control" id="pageURL" name="pageURL" autocomplete="off">
+            </div>
+            <div class="col text-center">
+                <button type="submit" class="btn btn-outline-primary">このページ　を　やさしい日本語　に　する</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
